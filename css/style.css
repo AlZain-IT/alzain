@@ -289,20 +289,6 @@ nav {
     background-position: center;
     position: relative;
 }
-.slide-2 {
-    background: url(../img/slider/IT.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-.slide-3 {
-    background: url(../img/slider/3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
 .slide-1:before, .slide-2:before, .slide-3:before {
     content: "";
     position: absolute;
@@ -440,122 +426,130 @@ nav {
 /*--------------------------------*/
 /*  5. Team Area
 /*--------------------------------*/
+/* ===================== TEAM SECTION CLEANUP ===================== */
 #team {
-    background-color: black;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    color: #fff;
-    overflow: hidden;
-    padding: 100px 0;
-    transition: all 0.35s ease 0s;
+  background-color: #000;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+  overflow: hidden;
+  padding: 100px 0;
+  transition: all 0.35s ease 0s;
 }
+
 .team-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative; /* Memastikan posisi relatif untuk anaknya */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background: transparent;
+  margin-bottom: 30px;
+  box-shadow: none;
 }
+
 .team-img {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 300px; /* Tinggi tetap untuk konsistensi */
+  position: relative;
+  overflow: hidden;
+  width: 260px;
+  height: 300px;
+  border-radius: 10px 10px 0 0;
+  background: #222;
+  margin: 0 auto;
 }
+
 .team-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top; /* Memastikan wajah terlihat di bagian atas */
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s cubic-bezier(.4,2,.3,1), filter 0.5s;
+  display: block;
 }
+
 .hover-style {
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.8);
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.85);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+  z-index: 2;
+  border-radius: 10px 10px 0 0;
 }
+
 .team-col:hover .hover-style {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+  opacity: 1;
 }
-.team-col:hover .team-img {
-    overflow: visible; /* Memungkinkan gambar yang di-scale terlihat tanpa terpotong */
-}
+
 .team-col:hover .team-img img {
-    -ms-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+  transform: scale(1.12);
+  filter: brightness(0.85);
 }
+
 .team-social {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* Posisi tengah yang lebih akurat */
-    width: 150px;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  width: auto;
+  position: static;
+  margin: 0;
+  z-index: 3;
 }
+
 .team-social i {
-    margin: 0 5px;
-    font-size: 30px;
-    color: #111111;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+  font-size: 28px;
+  color: #111;
+  background: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s, color 0.3s, transform 0.3s;
 }
+
 .team-social i:hover {
-    color: #0195FF;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+  color: #fff;
+  background: #0195FF;
+  transform: scale(1.12);
 }
+
 .member-name {
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-top: none;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box; /* Memastikan border dan padding tidak mengganggu tata letak */
-    display: block; /* Memastikan elemen membentuk blok yang konsisten */
-    margin-top: 10px; /* Memberi ruang antara gambar dan teks */
+  padding: 18px 10px 16px 10px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-top: none;
+  width: 260px;
+  text-align: center;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto 0 auto;
+  background: rgba(0,0,0,0.7);
+  border-radius: 0 0 10px 10px;
 }
+
 .member-name h3 {
-    font-size: 18px;
-    margin-bottom: 0;
+  font-size: 18px;
+  margin-bottom: 2px;
+  color: #fff;
+  letter-spacing: 1px;
 }
+
 .member-name p {
-    margin-top: 10px;
-    margin-bottom: 0;
-    font-size: 12px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 13px;
+  color: #bdbdbd;
 }
 
 /*--------------------------------*/
